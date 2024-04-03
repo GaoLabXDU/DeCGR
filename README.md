@@ -25,9 +25,9 @@ conda activate DeCGR
 pip install DeCGR -U
 ```
 # Tutorial
-DeCGR consists of three modules for deciphering complex genome rearrangements from chromatin contact maps: (1) Fragment assembly, (2) Validation CGRs by simulation, and (3) Hi-C map reconstruction. Test data is provided in the Data folder.
+DeCGR consists of three modules for deciphering complex genome rearrangements from chromatin contact maps: (1) Fragment assembly, (2) Validation CGRs by simulation, and (3) Hi-C map reconstruction. Test data is provided in the TestData folder.
 ## Use graphical interface
-$ DeCGR
+$ python DeCGR.py
 ## Fragment assembly
 ### input files
 * Tumor Hi-C (Hi-C file in mcool format)   
@@ -42,7 +42,7 @@ chr18	7350000	chr18	25900000
 chr18	8050000	chr18	23700000
 ```
 * Resolution (The resolution of Hi-C matrix)
-* chromosome (Chromosome ID, it need to be consistent with the Hi-C matrix storage in the Hi-C folder)
+* chromosome (Chromosome ID)
 ### Output files
 * Assembly result
 ```

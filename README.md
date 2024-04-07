@@ -14,6 +14,7 @@ python (required 3.7+ and tested with version 3.9)
 * pyBigWig (tested 0.3.22)   
 * sortedcontainers (tested 2.4.0)
 * pyBigWig (tested 0.3.22)
+* pomegranate (tested 0.14.8)
 # Installation
 ```
 conda config --add channels defaults

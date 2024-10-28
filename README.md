@@ -8,10 +8,10 @@
 
 DeCGR is organized into modules, with each module dedicated to a specific task, including:
 
-- Breakpoint Filtering
-- Fragment Assembly
-- Validation CGRs
-- Reconstruct Hi-C Map
+- Breakpoint Filtering (Identification and filtering of simple rearrangement events).
+- Fragment Assembly (Assembly of complex rearrangement events).
+- Validation CGRs (Validation of the completeness and accuracy of complex rearrangement events).
+- Reconstruct Hi-C Map (Generate a reconstructed Hi-C map based on complex rearrangement events).
 
 ## Contents
 
@@ -72,8 +72,9 @@ For detailed information, see the [HiSV documentation](https://github.com/GaoLab
 - **window**: The size of the sliding window used for analysis, specified as an integer (e.g., `10`).
 - **weight**: A regularization parameter, specified as a float greater than 0 and less than 1 (e.g., `0.2`).
 - **cutoff**: A threshold value for breakpoint selection, specified as a float greater than 0 and less than 1 (e.g., `0.6`).
-
-![HiSV_parameter_setting](image/HiSV_parameter.png)
+<div align="center">
+    <img src="image/HiSV_parameter.png" alt="HiSV_parameter_setting" width="300" height="300"/>
+</div>
 
 ### Step 4: Enter Candidate Rearrangement Events
 
@@ -130,7 +131,9 @@ For detailed information, see the [NeoLoopFinder documentation](https://github.c
 - **Enzyme**: The restriction enzyme used in the Hi-C experiment. Supported enzymes include `HindIII`, `MboI`, `DpnII`, `BglII`, `Arima`, and `uniform`. Use `uniform` if the genome was digested with a sequence-independent or uniformly cutting enzyme.
 - **nproc**: The number of processing threads to use, specified as an integer (e.g., `10`).
 
-![CNV_normalization_parameter_setting](image/CNV_normal_param.png)
+<div align="center">
+    <img src="image/CNV_normal_param.png" alt="CNV_normalization_parameter_setting" width="300" height="300"/>
+</div>
 
 ### Step 5: Run Fragment Assembly
 
@@ -246,7 +249,9 @@ For detailed information, see [NeoLoopFinder](https://github.com/XiaoTaoWang/Neo
 - **Enzyme**: The restriction enzyme used in the Hi-C experiment. Supported enzymes include: `HindIII`, `MboI`, `DpnII`, `BglII`, `Arima`, and `uniform`. Use `uniform` if the genome was digested with a sequence-independent or uniformly cutting enzyme.
 - **nproc**: The number of processing threads to use, specified as an integer (e.g., `10`).
 
-![CNV Normalization Parameter Setting](image/CNV_normal_param.png)
+<div align="center">
+    <img src="image/CNV_normal_param.png" alt="CNV_normalization_parameter_setting" width="300" height="300"/>
+</div>
 
 ### Step 5: Reconstruct Hi-C Map
 

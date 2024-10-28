@@ -83,7 +83,11 @@ Enter the two breakpoints of candidate rearrangement events in the **Position1**
 
 ### Step 5: Visualize Rearrangement Event
 
-Click **Visualization** to display
+Click **Visualization** to display.
+
+![Module1 Output](image/module1_output.png)
+
+It provides an interactive visualization of identified rearrangements, allowing users to filter out false positives and zoom in on peaks in abnormal regions. By clicking specific peaks, users can pinpoint more accurate breakpoint positions, enhancing result reliability. 
 
 # Fragment Assembly
 
@@ -146,6 +150,8 @@ To reinitialize the module, click **Reset**.
 
 ![Module2 Output](image/module2_output.png)
 
+The results interface presents slices of the Hi-C map corresponding to the rearrangement events, directional links between rearranged fragments, and schematic diagrams illustrating the assembled CGRs.
+
 # Validation CGRs
 
 **The Validation CGRs module allows users to verify the completeness and accuracy of the assembled CGRs.**
@@ -200,6 +206,9 @@ To reinitialize the module, click **Reset**.
 ## Output
 
 ![Module4 Output](image/module3_output.png)
+
+The simulated Hi-C map is displayed alongside the original Hi-C map in heatmap format, with rearranged fragments highlighted by dashed lines. This view provides clear images for reviewing CGRs, enabling users to visually compare abnormal interaction regions in the original and simulated Hi-C maps for validation. If the abnormal regions do not align, users can adjust the rearranged fragments and input them again (To step3). CGR events are confirmed when the abnormal interaction regions match precisely.
+
 
 # Reconstruct Hi-C Map
 
@@ -266,4 +275,7 @@ To reinitialize the module, click **Reset**.
 ## Output
 
 ![Module4 Output](image/module4_output.png)
+
+The output presents the reconstructed Hi-C map, with dashed lines marking the boundaries of rearranged fragments.
+
 

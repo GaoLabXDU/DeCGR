@@ -11,11 +11,12 @@ DeCGR is organized into modules, with each module dedicated to a specific task, 
 - Breakpoint Filtering (Identification and filtering of simple rearrangement events).
 - Fragment Assembly (Assembly of complex rearrangement events).
 - Validation CGRs (Validation of the completeness and accuracy of complex rearrangement events).
-- Reconstruct Hi-C Map (Generate a reconstructed Hi-C map based on complex rearrangement events).
+- Reconstruct Hi-C Map (Generate a reconstructed Hi-C map based on a rearrangement event).
 
 ## Contents
 
 - [Installation](#installation)
+- [Test data](#test-data)
 - [Breakpoint Filtering](#breakpoint-filtering)
 - [Fragment Assembly](#fragment-assembly)
 - [Validation CGRs](#validation-cgrs)
@@ -62,7 +63,7 @@ After loading the Hi-C file, use the **Resolution** dropdown to select the desir
 
 ### Step 3 (Optional): Identify Simple Rearrangement Breakpoints with HiSV
 
-Click **Run HiSV** to identify breakpoints for simple rearrangements. In the popup window, specify parameters such as chromosomes to analyze, window size, weight, and cutoff. Once completed, the results will appear in **The result of HiSV** box.
+Click **Run HiSV** to identify breakpoints for simple rearrangements. In the popup window, specify parameters such as chromosomes to analyze, window size, weight, and cutoff. Click **Run** to run the process, which may take several minutes to complete. Once completed, the results will appear in **The result of HiSV** box.
 
 #### Parameter Descriptions
 
@@ -121,7 +122,7 @@ Click **Breakpoint File** to select a file containing simple rearrangement break
 
 ### Step 4: CNV Normalization
 
-Click **CNV Normalization**. In the popup window, select the reference genome and enzyme for the Hi-C sample. Adjust `nproc` according to the available computational resources.
+Click **CNV Normalization**. In the popup window, select the reference genome and enzyme for the Hi-C sample. Adjust `nproc` according to the available computational resources. Click **Run** to run the process, which may take several minutes to complete. 
 
 #### Parameter Descriptions
 
@@ -214,14 +215,13 @@ The input files for this module need to provide the following:
    
 2. **A CGR file**, which contains a CGR event, is formatted as follows:
    
-   .. code-block:: text
-
-       head K562_chr18_CGR.txt
-       chrom	start	end	node	orient
-       chr18	150000	450000	A	+
-       chr18	21900000	23650000	B	+
-       chr18	8100000	10850000	F	+
-       chr18	1650000	3450000	E	-
+   ```text
+   head K562_chr18_CGR.txt
+   chrom	start	end	node	orient
+   chr18	150000	450000	A	+
+   chr18	21900000	23650000	B	+
+   chr18	8100000	10850000	F	+
+   chr18	1650000	3450000	E	-
 
 ## Guideline
 
@@ -239,7 +239,7 @@ Click **CGR File** to select a file containing a CGR event.
 
 ### Step 4: CNV Normalization
 
-Click **CNV Normalization**. In the popup window, select the reference genome and enzyme for the Hi-C sample, and adjust `nproc` based on available computational resources.
+Click **CNV Normalization**. In the popup window, select the reference genome and enzyme for the Hi-C sample, and adjust `nproc` based on available computational resources.  Click **Run** to run the process, which may take several minutes to complete. 
 
 #### Parameter Descriptions
 

@@ -1,8 +1,7 @@
 # yaml file to configure readthedocs build
-python:
-   version: 3.9
-   setup_py_install: true
-   pip_install: False
-
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.9"
 sphinx:
   configuration: docs/source/conf.py

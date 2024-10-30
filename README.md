@@ -82,6 +82,16 @@ The input files for this module must include the following:
 2. **Candidate Rearrangement Events**:
 
    - **If not using HiSV**: Specify candidate rearrangement events with each breakpoint formatted as `chr1:0-50000`. These coordinates can be identical, representing a single base position (e.g., `chr1:50000-50000`).
+     ## Tools for Identifying Rearrangement Breakpoints
+     There are many methods available to identify rearrangement breakpoints, both from Hi-C data and other data sources such as whole-genome sequencing (WGS). Below are links to some useful tools:
+      
+      - [EagleC](https://github.com/XiaoTaoWang/EagleC) - Breakpoint detection based on Hi-C data.
+      - [HiNT](https://github.com/parklab/HiNT) - A tool for identifying structural variants in Hi-C data.
+      - [HiCtrans](https://github.com/ay-lab/HiCtrans) - Another method for detecting rearrangements using Hi-C data.
+      - [hic_breakfinder](https://github.com/dixonlab/hic_breakfinder) - Software for breakpoint discovery in Hi-C data.
+      - [LUMPY](https://github.com/arq5x/lumpy-sv) - A tool for detecting structural variants, compatible with WGS data.
+
+      Each of these tools provides different capabilities for detecting rearrangement breakpoints based on your data type and research needs.
 
    - **If using HiSV**: Wait for HiSV to finish running to obtain the breakpoints for each simple rearrangement event from the **The result of HiSV** box.
 

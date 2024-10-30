@@ -1,0 +1,9 @@
+# yaml file to configure readthedocs build
+build:
+  os: macos m3
+  tools:
+    python: "3.9"
+
+# Build documentation in the "docs/" directory with Sphinx
+sphinx:
+  configuration: docs/source/conf.py

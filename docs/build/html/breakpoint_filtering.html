@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breakpoint Filtering &mdash; DeCGR 0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=10f1778b"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fragment Assembly" href="fragment_assembly.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DeCGR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Breakpoint Filtering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#guideline">Guideline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-load-tumor-sample"><strong>Step 1</strong>: Load Tumor Sample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-select-resolution"><strong>Step 2</strong>: Select Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-optional-identify-simple-rearrangement-breakpoints-with-hisv"><strong>Step 3 (Optional)</strong>: Identify Simple Rearrangement Breakpoints with HiSV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-4-enter-candidate-rearrangement-events"><strong>Step 4</strong>: Enter Candidate Rearrangement Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-5-visualize-rearrangement-event"><strong>Step 5</strong>: Visualize Rearrangement Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-6-screen-for-false-positives-or-refine-breakpoints"><strong>Step 6</strong>: Screen for False Positives or Refine Breakpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-7-reset-visualization"><strong>Step 7</strong>: Reset Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fragment_assembly.html">Fragment Assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation_CGRs.html">Validation CGRs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reconstruct_map.html">Reconstruct Hi-C Map</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DeCGR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Breakpoint Filtering</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/breakpoint_filtering.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="breakpoint-filtering">
+<h1>Breakpoint Filtering<a class="headerlink" href="#breakpoint-filtering" title="Link to this heading"></a></h1>
+<p><strong>The Breakpoint Filtering module identifies and filters breakpoints, providing the coordinates of simple rearrangement breakpoints.</strong></p>
+<a class="reference internal image-reference" href="_images/module1.png"><img alt="“Module1”" class="align-center" src="_images/module1.png" style="width: 700px;" />
+</a>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The Breakpoint Filtering module offers two key functionalities:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Rearranged breakpoint identification with HiSV</p></li>
+<li><p>Visualization of rearrangement events</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Link to this heading"></a></h2>
+<p>The input files for this module must include the following:</p>
+<ol class="arabic simple">
+<li><p><strong>A tumor Hi-C sample</strong> in mcool or cool format.</p></li>
+<li><p><strong>Candidate Rearrangement Events</strong>:</p>
+<ul class="simple">
+<li><p><strong>If not using HiSV</strong>: Specify candidate rearrangement events with each breakpoint formatted as <cite>chr1:0-50000</cite>. These coordinates can be identical, representing a single base position (e.g., <cite>chr1:50000-50000</cite>).</p></li>
+<li><p><strong>If using HiSV</strong>: Wait for HiSV to finish running to obtain the breakpoints for each simple rearrangement event from the <strong>The result of HiSV</strong> box.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="guideline">
+<h2>Guideline<a class="headerlink" href="#guideline" title="Link to this heading"></a></h2>
+<section id="step-1-load-tumor-sample">
+<h3><strong>Step 1</strong>: Load Tumor Sample<a class="headerlink" href="#step-1-load-tumor-sample" title="Link to this heading"></a></h3>
+<p>Click <span class="guilabel">Tumor Sample</span>, select a tumor Hi-C file, and click <span class="guilabel">Load</span> to import the file.</p>
+</section>
+<section id="step-2-select-resolution">
+<h3><strong>Step 2</strong>: Select Resolution<a class="headerlink" href="#step-2-select-resolution" title="Link to this heading"></a></h3>
+<p>After loading the Hi-C file, use the Resolution dropdown to select the desired resolution.</p>
+</section>
+<section id="step-3-optional-identify-simple-rearrangement-breakpoints-with-hisv">
+<h3><strong>Step 3 (Optional)</strong>: Identify Simple Rearrangement Breakpoints with HiSV<a class="headerlink" href="#step-3-optional-identify-simple-rearrangement-breakpoints-with-hisv" title="Link to this heading"></a></h3>
+<p>Click <span class="guilabel">Run HiSV</span> to identify breakpoints for simple rearrangements. In the popup window, specify parameters such as chromosomes to analyze, window size, weight, and cutoff. Once completed, the results will appear in <strong>The result of HiSV</strong> box.</p>
+<p><strong>Parameter Descriptions</strong> (for detailed information, see <a class="reference external" href="https://github.com/GaoLabXDU/HiSV">HiSV documentation</a>):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Chrom List</strong>: A list of chromosomes to analyze, specified as a comma-separated list, without any spaces (e.g., chr1,chr2,chr3).</p></li>
+<li><p><strong>window</strong>: The size of the sliding window used for analysis, specified as an integer (e.g., 10).</p></li>
+<li><p><strong>weight</strong>: A float representing the regularization parameter, specified as a float greater than 0 and less than 1. (e.g., 0.2).</p></li>
+<li><p><strong>cutoff</strong>: A threshold value for breakpoint selection, specified as a float greater than 0 and less than 1. (e.g., 0.6).</p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="_images/HiSV_parameter.png"><img alt="“HiSV_parameter_setting”" class="align-center" src="_images/HiSV_parameter.png" style="width: 300px;" />
+</a>
+</section>
+<section id="step-4-enter-candidate-rearrangement-events">
+<h3><strong>Step 4</strong>: Enter Candidate Rearrangement Events<a class="headerlink" href="#step-4-enter-candidate-rearrangement-events" title="Link to this heading"></a></h3>
+<p>Enter the two breakpoints of candidate rearrangement events in the <strong>Position1</strong> and <strong>Position2</strong> fields.</p>
+</section>
+<section id="step-5-visualize-rearrangement-event">
+<h3><strong>Step 5</strong>: Visualize Rearrangement Event<a class="headerlink" href="#step-5-visualize-rearrangement-event" title="Link to this heading"></a></h3>
+<p>Click <span class="guilabel">Visualization</span> to display the Hi-C map slice for the candidate rearrangement on the right side of the interface. Rearranged segments are highlighted: regions are outlined with a black box, and individual points are marked with a circle.</p>
+</section>
+<section id="step-6-screen-for-false-positives-or-refine-breakpoints">
+<h3><strong>Step 6</strong>: Screen for False Positives or Refine Breakpoints<a class="headerlink" href="#step-6-screen-for-false-positives-or-refine-breakpoints" title="Link to this heading"></a></h3>
+<p>Observe abnormal interactions to screen for false positives. Alternatively, select peaks within abnormal interaction regions to refine breakpoints.</p>
+</section>
+<section id="step-7-reset-visualization">
+<h3><strong>Step 7</strong>: Reset Visualization<a class="headerlink" href="#step-7-reset-visualization" title="Link to this heading"></a></h3>
+<p>Click <span class="guilabel">Reset Visualization</span> to analyze a new rearrangement event (repeat <strong>Step 4</strong>).</p>
+<p>To reinitialize the module, click <span class="guilabel">Reset</span>.</p>
+</section>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="_images/module1_output.png"><img alt="“Module1”" class="align-center" src="_images/module1_output.png" style="width: 700px;" />
+</a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fragment_assembly.html" class="btn btn-neutral float-right" title="Fragment Assembly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junp Li.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

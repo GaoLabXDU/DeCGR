@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fragment Assembly &mdash; DeCGR 0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=10f1778b"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Validation CGRs" href="validation_CGRs.html" />
+    <link rel="prev" title="Breakpoint Filtering" href="breakpoint_filtering.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DeCGR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="breakpoint_filtering.html">Breakpoint Filtering</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fragment Assembly</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#guideline">Guideline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-load-tumor-sample"><strong>Step 1</strong>: Load Tumor Sample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-select-resolution"><strong>Step 2</strong>: Select Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-load-breakpoint-file"><strong>Step 3</strong>: Load Breakpoint File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-4-cnv-normalization"><strong>Step 4</strong>: CNV normalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-5-run-fragment-assembly"><strong>Step 5</strong>: Run Fragment Assembly</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="validation_CGRs.html">Validation CGRs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reconstruct_map.html">Reconstruct Hi-C Map</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DeCGR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Fragment Assembly</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/fragment_assembly.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fragment-assembly">
+<h1>Fragment Assembly<a class="headerlink" href="#fragment-assembly" title="Link to this heading"></a></h1>
+<p><strong>The Fragment Assembly module reconstructs candidate CGRs using the provided rearrangement breakpoints.</strong></p>
+<a class="reference internal image-reference" href="_images/module2.png"><img alt="“Module2”" class="align-center" src="_images/module2.png" style="width: 700px;" />
+</a>
+<section id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Link to this heading"></a></h2>
+<p>The input files for this module must include the following:</p>
+<ol class="arabic simple">
+<li><p><strong>A tumor Hi-C sample</strong> in mcool or cool format.</p></li>
+<li><p><strong>A breakpoint file</strong>, which contains multiple simple rearrangement events, is formatted as follows:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>head K562_chr18_breakpoint.txt
+chr18       450000  chr18   21900000
+chr18       450000  chr18   3450000
+chr18       3450000 chr18   10850000
+chr18       7450000 chr18   25900000
+chr18       8100000 chr18   23700000
+</pre></div>
+</div>
+</section>
+<section id="guideline">
+<h2>Guideline<a class="headerlink" href="#guideline" title="Link to this heading"></a></h2>
+<section id="step-1-load-tumor-sample">
+<h3><strong>Step 1</strong>: Load Tumor Sample<a class="headerlink" href="#step-1-load-tumor-sample" title="Link to this heading"></a></h3>
+<p>Click <span class="guilabel">Tumor Sample</span>, select the tumor Hi-C file, and click <span class="guilabel">Load</span> to import the file.</p>
+</section>
+<section id="step-2-select-resolution">
+<h3><strong>Step 2</strong>: Select Resolution<a class="headerlink" href="#step-2-select-resolution" title="Link to this heading"></a></h3>
+<p>Once the file is loaded, choose the desired resolution from the <span class="guilabel">Resolution</span> dropdown menu.</p>
+</section>
+<section id="step-3-load-breakpoint-file">
+<h3><strong>Step 3</strong>: Load Breakpoint File<a class="headerlink" href="#step-3-load-breakpoint-file" title="Link to this heading"></a></h3>
+<p>Click <span class="guilabel">Breakpoint File</span> to select a file containing simple rearrangement breakpoints.</p>
+</section>
+<section id="step-4-cnv-normalization">
+<h3><strong>Step 4</strong>: CNV normalization<a class="headerlink" href="#step-4-cnv-normalization" title="Link to this heading"></a></h3>
+<p>Click <span class="guilabel">CNV Normalization</span>. In the popup window, select the reference genome and enzyme for the Hi-C sample. Adjust <cite>nproc</cite> according to the available computational.</p>
+<p><strong>Parameter Descriptions</strong> (for detailed information, see <a class="reference external" href="https://github.com/XiaoTaoWang/NeoLoopFinder">NeoLoopFinder</a>):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Ref Genome</strong>: The reference genome used for mapping the Hi-C data. Supported genomes include: <cite>hg38</cite>, <cite>hg19</cite>, <cite>mm10</cite>, and <cite>mm9</cite>.</p></li>
+<li><p><strong>Enzyme</strong>: The restriction enzyme used in the Hi-C experiment. Supported enzymes include: <cite>HindIII</cite>, <cite>MboI</cite>, <cite>DpnII</cite>, <cite>BglII</cite>, <cite>Arima</cite>, and <cite>uniform</cite>. Use <cite>uniform</cite> if the genome was digested with a sequence-independent or uniformly cutting enzyme.</p></li>
+<li><p><strong>nproc</strong>: The number of processing threads to use, specified as an integer (e.g., <cite>10</cite>).</p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="_images/CNV_normal_param.png"><img alt="“CNV_normalization_parameter_setting”" class="align-center" src="_images/CNV_normal_param.png" style="width: 300px;" />
+</a>
+</section>
+<section id="step-5-run-fragment-assembly">
+<h3><strong>Step 5</strong>: Run Fragment Assembly<a class="headerlink" href="#step-5-run-fragment-assembly" title="Link to this heading"></a></h3>
+<p>Click <span class="guilabel">Fragment Assembly</span> to generate and view the assembled complex rearrangements. The results will be displayed on the right side of the interface as well as in the <strong>The result of assembled CGRs</strong> box.</p>
+<p>To reinitialize the module, click <span class="guilabel">Reset</span>.</p>
+</section>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="_images/module2_output.png"><img alt="“Module1”" class="align-center" src="_images/module2_output.png" style="width: 700px;" />
+</a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="breakpoint_filtering.html" class="btn btn-neutral float-left" title="Breakpoint Filtering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="validation_CGRs.html" class="btn btn-neutral float-right" title="Validation CGRs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Junp Li.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

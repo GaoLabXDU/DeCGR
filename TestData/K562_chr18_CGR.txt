@@ -1,0 +1,5 @@
+chrom	start	end	node	orient
+chr18	150000	450000	A	+
+chr18	21900000	23650000	B	+
+chr18	8100000	10850000	F	+
+chr18	1650000	3450000	E	-

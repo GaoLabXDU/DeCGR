@@ -41,6 +41,7 @@ python (required 3.7+ and tested with version 3.9)
 * sortedcontainers (tested 2.4.0)
 * pomegranate (tested 0.15.0)
 * scikit-image (tested 0.24.0)
+* wget (tested 3.2)
 
 ### Installation
 DeCGR and all the dependencies can be installed using pip:
@@ -53,6 +54,11 @@ DeCGR and all the dependencies can be installed using pip:
    $ conda activate DeCGR
    $ pip install -U DeCGR
    ```
+# Running
+Use the command below to access the DeCGR interface
+```text
+   $ DeCGR
+```
 # Test Data
 **Tumor Hi-C data**: K562 cell line (4DNFI18UHVRO.mcool) can be downloaded from [4dnucleome](https://data.4dnucleome.org/files-processed/4DNFI18UHVRO/).  
 **Control Hi-C data**: GM12878 cell line (4DNFITRVKRPA.mcool) can be downloaded from [4dnucleome](https://data.4dnucleome.org/files-processed/4DNFITRVKRPA/).   

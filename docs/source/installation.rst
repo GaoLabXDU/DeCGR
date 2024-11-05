@@ -66,6 +66,7 @@ On Windows systems, packages like **rpy2** may not be fully compatible, which ca
 1. **JIT Initialization Error**: Encountering "fatal error unable to initialize the jit" when executing **DeCGR_windows**.
 
    **Solution**:
+
    .. code-block:: bash
 
       $ set R_HOME=%CONDA_PREFIX%\Lib\R
@@ -73,9 +74,11 @@ On Windows systems, packages like **rpy2** may not be fully compatible, which ca
 2. **Missing 'stats' Package**: Error "package 'stats' in options('defaultPackages') was not found" when running the Fragment Assembly or visualization modules.
 
    **Solution**:
+
    .. code-block:: bash
 
       $ set ENV_PATH=%CONDA_PREFIX%
+
       $ xcopy "%ENV_PATH%\Lib\R\bin\x64\*.*" "%ENV_PATH%\Lib\R\library\stats\libs\x64" /S /I
 
 

@@ -54,6 +54,12 @@ DeCGR and all the dependencies can be installed using pip:
    $ conda activate DeCGR
    $ pip install -U DeCGR
    ```
+### Notes for Installation on Windows Systems
+1. **Avoid** using PowerShell for the installation.
+2. **Installation Error**: "error: Microsoft Visual C++ 14.0 or greater is required."
+   
+   **Solution**: Refer to this [guide](https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst).  
+
 # Running
 Use the command below to access the DeCGR interface:  
 ## Mac os or Linux (Suggestion)
@@ -64,25 +70,21 @@ Use the command below to access the DeCGR interface:
 ```text
    $ DeCGR_windows
 ```
-### Note
-On Windows systems, packages like rpy2 may not be fully compatible, leading to various issues during installation. Below, we outline the problems and their solutions encountered during the installation process for user reference:
-
-1. **Installation Error**: "error: Microsoft Visual C++ 14.0 or greater is required."
+### Notes for Running on Windows Systems
+On Windows systems, packages like rpy2 may not be fully compatible, leading to various issues during running. Below, we outline the problems and their solutions encountered during the running  process for user reference:
    
-   **Solution**: Refer to this [guide](https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst).  
-
-2. **JIT Initialization Error**: "fatal error unable to initialize the jit" when executing **DeCGR_windows**.
+1. **JIT Initialization Error**: "fatal error unable to initialize the jit" when executing **DeCGR_windows**.
    
    **Solution**:
    ```text
    $ set R_HOME=%CONDA_PREFIX%\Lib\R
    ```
-3. **Missing 'stats' Package**: Error "package 'stats' in options('defaultPackages') was not found" when running the Fragment Assembly or visualization modules.
+2. **Missing 'stats' Package**: Error "package 'stats' in options('defaultPackages') was not found" when running the Fragment Assembly or visualization modules.
    
    **Solution**:
    ```text
    $ set ENV_PATH=%CONDA_PREFIX%
-   $ xcopy “%ENV_PATH%\Lib\R\bin\x64*.*” “%ENV_PATH%\Lib\R\library\stats\libs\x64" /S /I
+   $ xcopy "%ENV_PATH%\Lib\R\bin\x64\*.*" "%ENV_PATH%\Lib\R\library\stats\libs\x64" /S /I
    ```
 
 # Test Data

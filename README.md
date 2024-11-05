@@ -55,10 +55,36 @@ DeCGR and all the dependencies can be installed using pip:
    $ pip install -U DeCGR
    ```
 # Running
-Use the command below to access the DeCGR interface
+Use the command below to access the DeCGR interface:  
+## Mac os or Linux (Suggestion)
 ```text
    $ DeCGR
 ```
+## Windows
+```text
+   $ DeCGR_windows
+```
+### Note
+On Windows systems, packages like rpy2 may not be fully compatible, leading to various issues during installation. Below, we outline the problems and their solutions encountered during the installation process for user reference:
+
+1. **Installation Error**: "error: Microsoft Visual C++ 14.0 or greater is required."
+   
+   **Solution**: Refer to this [guide](https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst).  
+
+2. **JIT Initialization Error**: "fatal error unable to initialize the jit" when executing **DeCGR_windows**.
+   
+   **Solution**:
+   ```text
+   $ set R_HOME=%CONDA_PREFIX%\Lib\R
+   ```
+3. **Missing 'stats' Package**: Error "package 'stats' in options('defaultPackages') was not found" when running the Fragment Assembly or visualization modules.
+   
+   **Solution**:
+   ```text
+   $ set ENV_PATH=%CONDA_PREFIX%
+   $ xcopy “%ENV_PATH%\Lib\R\bin\x64*.*” “%ENV_PATH%\Lib\R\library\stats\libs\x64" /S /I
+   ```
+
 # Test Data
 **Tumor Hi-C data**: K562 cell line (4DNFI18UHVRO.mcool) can be downloaded from [4dnucleome](https://data.4dnucleome.org/files-processed/4DNFI18UHVRO/).  
 **Control Hi-C data**: GM12878 cell line (4DNFITRVKRPA.mcool) can be downloaded from [4dnucleome](https://data.4dnucleome.org/files-processed/4DNFITRVKRPA/).   

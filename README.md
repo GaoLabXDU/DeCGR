@@ -11,7 +11,9 @@ DeCGR is organized into modules, with each module dedicated to a specific task, 
 - Breakpoint Filtering (Identification and filtering of simple rearrangement events).
 - Fragment Assembly (Assembly of complex rearrangement events).
 - Validation CGRs (Validation of the completeness and accuracy of complex rearrangement events).
-- Reconstruct Hi-C Map (Generate a reconstructed Hi-C map based on a rearrangement event).
+- Reconstruct Hi-C Map (Generate a reconstructed Hi-C map based on a rearrangement event).  
+
+For detailed guidance on using DeCGR, please refer to the official documentation at [DeCGR ReadTheDocs](https://decgr.readthedocs.io/en/latest/).
 
 ## Contents
 

@@ -33,7 +33,7 @@ DeCGR and all dependencies can be installed using pip::
    $ pip install -U DeCGR
 
 Notes for Installation on Windows Systems
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. **Avoid PowerShell**: Use Command Prompt instead of PowerShell for the installation, as certain commands may not work correctly in PowerShell.
 
 2. **Installation Error**: Encountering the error "error: Microsoft Visual C++ 14.0 or greater is required."
@@ -41,24 +41,24 @@ Notes for Installation on Windows Systems
    **Solution**: Refer to this `guide <https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst>`_.
 
 Running
-=======
+-------
 
 Use the command below to access the DeCGR interface.
 
 Mac OS or Linux (Recommended)
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
 
    $ DeCGR
 
 Windows
--------
+~~~~~~~
 .. code-block:: bash
 
    $ DeCGR_windows
 
 Notes for Running on Windows Systems
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On Windows systems, packages like **rpy2** may not be fully compatible, which can lead to various issues during runtime. Below are common problems and their solutions for user reference:
 

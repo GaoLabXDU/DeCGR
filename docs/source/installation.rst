@@ -18,6 +18,7 @@ Python dependencies
 * sortedcontainers (tested 2.4.0)
 * pomegranate (tested 0.15.0)
 * scikit-image (tested 0.24.0)
+* wget (tested 3.2)
 
 Installation
 ------------
@@ -30,6 +31,53 @@ DeCGR and all dependencies can be installed using pip::
    $ conda create -n DeCGR python=3.9 rpy2 r-mgcv
    $ conda activate DeCGR
    $ pip install -U DeCGR
+
+Notes for Installation on Windows Systems
+=========================================
+
+1. **Avoid PowerShell**: Use Command Prompt instead of PowerShell for the installation, as certain commands may not work correctly in PowerShell.
+
+2. **Installation Error**: Encountering the error "error: Microsoft Visual C++ 14.0 or greater is required."
+
+   **Solution**: Refer to this `guide <https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst>`_.
+
+Running
+=======
+
+Use the command below to access the DeCGR interface.
+
+Mac OS or Linux (Recommended)
+-----------------------------
+.. code-block:: bash
+
+   $ DeCGR
+
+Windows
+-------
+.. code-block:: bash
+
+   $ DeCGR_windows
+
+Notes for Running on Windows Systems
+====================================
+
+On Windows systems, packages like **rpy2** may not be fully compatible, which can lead to various issues during runtime. Below are common problems and their solutions for user reference:
+
+1. **JIT Initialization Error**: Encountering "fatal error unable to initialize the jit" when executing **DeCGR_windows**.
+
+   **Solution**:
+   .. code-block:: bash
+
+      $ set R_HOME=%CONDA_PREFIX%\Lib\R
+
+2. **Missing 'stats' Package**: Error "package 'stats' in options('defaultPackages') was not found" when running the Fragment Assembly or visualization modules.
+
+   **Solution**:
+   .. code-block:: bash
+
+      $ set ENV_PATH=%CONDA_PREFIX%
+      $ xcopy "%ENV_PATH%\Lib\R\bin\x64\*.*" "%ENV_PATH%\Lib\R\library\stats\libs\x64" /S /I
+
 
 Test Data
 ---------

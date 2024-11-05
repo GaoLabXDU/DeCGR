@@ -33,8 +33,7 @@ DeCGR and all dependencies can be installed using pip::
    $ pip install -U DeCGR
 
 Notes for Installation on Windows Systems
-=========================================
-
+-----------------------------------------
 1. **Avoid PowerShell**: Use Command Prompt instead of PowerShell for the installation, as certain commands may not work correctly in PowerShell.
 
 2. **Installation Error**: Encountering the error "error: Microsoft Visual C++ 14.0 or greater is required."
@@ -59,7 +58,7 @@ Windows
    $ DeCGR_windows
 
 Notes for Running on Windows Systems
-====================================
+------------------------------------
 
 On Windows systems, packages like **rpy2** may not be fully compatible, which can lead to various issues during runtime. Below are common problems and their solutions for user reference:
 

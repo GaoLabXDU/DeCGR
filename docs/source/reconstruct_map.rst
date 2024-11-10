@@ -41,7 +41,7 @@ Once the Hi-C file is loaded, use the :guilabel:`Resolution` dropdown menu to ch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Click :guilabel:`CGR File` to select a file containing a CGR event.
 
-**Step 4**: CNV normalization
+**Step 4**: CNV normalization (To better visualization)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Click :guilabel:`CNV Normalization`. In the popup window, select the reference genome and enzyme for the Hi-C sample, and adjust `nproc` based on available computational resources.
 

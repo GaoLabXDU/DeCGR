@@ -204,7 +204,7 @@ Once the file is loaded, choose the desired resolution from the **Resolution** d
 
 Click **Breakpoint File** to select a file containing simple rearrangement breakpoints.
 
-### Step 4: CNV Normalization (To obtain the more accurately fragments)
+### Step 4: CNV Normalization (To obtain the more accurate fragments)
 
 Click **CNV Normalization**. In the popup window, select the reference genome and enzyme for the Hi-C sample. Adjust `nproc` according to the available computational resources. Click **Run** to run the process, which may take several minutes to complete. 
 

@@ -204,7 +204,7 @@ Once the file is loaded, choose the desired resolution from the **Resolution** d
 
 Click **Breakpoint File** to select a file containing simple rearrangement breakpoints.
 
-### Step 4: CNV Normalization
+### Step 4: CNV Normalization (To obtain the more accurately fragments)
 
 Click **CNV Normalization**. In the popup window, select the reference genome and enzyme for the Hi-C sample. Adjust `nproc` according to the available computational resources. Click **Run** to run the process, which may take several minutes to complete. 
 
@@ -326,7 +326,7 @@ Once the Hi-C file is loaded, use the **Resolution** dropdown menu to choose the
 
 Click **CGR File** to select a file containing a CGR event.
 
-### Step 4: CNV Normalization
+### Step 4: CNV Normalization (To better visualization)
 
 Click **CNV Normalization**. In the popup window, select the reference genome and enzyme for the Hi-C sample, and adjust `nproc` based on available computational resources.  Click **Run** to run the process, which may take several minutes to complete. 
 
